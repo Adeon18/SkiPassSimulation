@@ -8,7 +8,6 @@ import java.util.Date;
 
 @Getter
 public class LiftsSkiPass extends SkiPass{
-    private int duration;
 
     public LiftsSkiPass(WeekType weekType, LiftType duration) {
         this.weekType = weekType;
@@ -24,13 +23,5 @@ public class LiftsSkiPass extends SkiPass{
         } else {
             duration = 0;
         }
-    }
-
-    @Override
-    public boolean checkIfUsable() {
-        if (duration > 0){
-            return true;
-        }
-        return false;
     }
 }

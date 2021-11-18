@@ -5,7 +5,7 @@ import skipass.SkiPass;
 
 public class Turnstile {
 
-    private RegisterSystem registerSystem = RegisterSystem.getRegisterSystem();
+    private final RegisterSystem registerSystem = RegisterSystem.getRegisterSystem();
 
     // We scan the card and return true if it was successfully scanned and false if it wasn't
     public boolean scanSkiPass(SkiPass card){
@@ -19,9 +19,11 @@ public class Turnstile {
             }
             // Block Pass if not usable anymore
             registerSystem.blockSkiPass(card);
+            registerSystem.logEvent("No more active card no: " + card.getId());
             return true;
         }
         System.out.println("Access DECLINED for card no: " + card.getId());
+        registerSystem.logEvent("Access DECLINED for card no: " + card.getId());
         return false;
     }
 }

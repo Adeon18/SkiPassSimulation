@@ -8,12 +8,12 @@ import lombok.Setter;
 import java.util.Calendar;
 import java.util.Date;
 
-@Getter
+@Getter @Setter
 public abstract class SkiPass {
     private int id;
     protected WeekType weekType;
-    @Setter
     protected boolean activated;
+    protected int duration;
 
     public SkiPass() {
         this.id = IdGenerator.generateId();
@@ -21,7 +21,6 @@ public abstract class SkiPass {
 
     public abstract void use();
     // Check if we can still use the card
-    public abstract boolean checkIfUsable();
 
     protected boolean isValidWeekType(Date date){
         Calendar calendar = Calendar.getInstance();
@@ -35,5 +34,9 @@ public abstract class SkiPass {
             return weekDay == Calendar.SATURDAY || weekDay == Calendar.SUNDAY;
         }
         return false;
+    }
+
+    public boolean checkIfUsable() {
+        return duration > 0;
     }
 }

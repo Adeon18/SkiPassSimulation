@@ -6,7 +6,6 @@ import carddata.DayType;
 import java.util.Date;
 
 public class DaysSkiPass extends SkiPass{
-    private int duration;
     private Date prev_date;
 
     public DaysSkiPass(WeekType weekType, DayType duration) {
@@ -27,13 +26,5 @@ public class DaysSkiPass extends SkiPass{
         } else {
             duration = 0;
         }
-    }
-
-    @Override
-    public boolean checkIfUsable() {
-        if (duration > 0){
-            return true;
-        }
-        return false;
     }
 }

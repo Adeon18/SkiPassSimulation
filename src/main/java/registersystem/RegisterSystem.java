@@ -2,9 +2,12 @@ package registersystem;
 
 import carddata.DayType;
 import carddata.LiftType;
+import carddata.Season;
 import carddata.WeekType;
+import lombok.Getter;
 import skipass.DaysSkiPass;
 import skipass.LiftsSkiPass;
+import skipass.SeasonSkiPass;
 import skipass.SkiPass;
 
 import java.util.ArrayList;
@@ -13,8 +16,8 @@ import java.util.List;
 public class RegisterSystem {
 
     private static RegisterSystem registerSystem;
-    List<SkiPass> registeredPasses = new ArrayList<SkiPass>();
-    List<String> passLogs = new ArrayList<String>();
+    @Getter List<SkiPass> registeredPasses = new ArrayList<SkiPass>();
+    @Getter List<String> passLogs = new ArrayList<String>();
 
     private RegisterSystem() {
     }
@@ -34,6 +37,11 @@ public class RegisterSystem {
 
     public void generateSkiPass(WeekType weekType, LiftType liftType){
         LiftsSkiPass skiPass =  new LiftsSkiPass(weekType, liftType);
+        registeredPasses.add(skiPass);
+    }
+    // This is pretty bad, I know but I couldn't think of a better system.
+    public void generateSeasonSkiPass(Season season){
+        SeasonSkiPass skiPass = new SeasonSkiPass(season);
         registeredPasses.add(skiPass);
     }
 
