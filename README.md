@@ -4,7 +4,7 @@ This is my Midterm solution for the task.
 
 ## How I Solved it
 
-![./diagram/diagram.png]
+![diagram](./diagram/diagram.png)
 
 - I have an abstract class SkiPass, which has some basic methods implemented.
 - Then I implemented LiftsSkiPass, DaysSkiPass and SeasonSkiPass as instances of SkiPass.
