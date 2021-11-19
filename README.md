@@ -6,6 +6,7 @@ This is my Midterm solution for the task.
 
 ![diagram](./diagram/diagram.png)
 
+
 - I have an abstract class SkiPass, which has some basic methods implemented.
 - Then I implemented LiftsSkiPass, DaysSkiPass and SeasonSkiPass as instances of SkiPass.
 - I also have enums DayType(If we choose days), LiftsType(If we choose lists) and WeekType for type of the week. 
