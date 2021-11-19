@@ -8,14 +8,14 @@ import java.util.Date;
 public class DaysSkiPass extends SkiPass{
     private Date prev_date;
 
-    public DaysSkiPass(WeekType weekType, DayType duration) {
+    DaysSkiPass(WeekType weekType, DayType duration) {
         this.weekType = weekType;
         this.duration = duration.getLength();
         this.activated = true;
         prev_date = new Date();
     }
     @Override
-    // Use the SkiPass
+    // Use the SkiPass if the day is changed, decrement the duration
     public void use(){
         Date new_date = new Date();
         if (isValidWeekType(new_date)) {

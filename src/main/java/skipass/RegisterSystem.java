@@ -1,14 +1,10 @@
-package registersystem;
+package skipass;
 
 import carddata.DayType;
 import carddata.LiftType;
 import carddata.Season;
 import carddata.WeekType;
 import lombok.Getter;
-import skipass.DaysSkiPass;
-import skipass.LiftsSkiPass;
-import skipass.SeasonSkiPass;
-import skipass.SkiPass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,17 +30,18 @@ public class RegisterSystem {
         DaysSkiPass skiPass = new DaysSkiPass(weekType, dayType);
         registeredPasses.add(skiPass);
     }
-
+    // By lifts
     public void generateSkiPass(WeekType weekType, LiftType liftType){
         LiftsSkiPass skiPass =  new LiftsSkiPass(weekType, liftType);
         registeredPasses.add(skiPass);
     }
     // This is pretty bad, I know but I couldn't think of a better system.
+    // This is a separate function for season.
     public void generateSeasonSkiPass(Season season){
         SeasonSkiPass skiPass = new SeasonSkiPass(season);
         registeredPasses.add(skiPass);
     }
-
+    // We keep the logs as an array of strings.
     public void logEvent(String log) {
         passLogs.add(log);
     }

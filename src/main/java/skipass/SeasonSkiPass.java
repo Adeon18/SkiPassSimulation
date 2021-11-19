@@ -10,7 +10,7 @@ import java.util.Date;
 public class SeasonSkiPass extends SkiPass{
     private Season season;
 
-    public SeasonSkiPass(Season season) {
+    SeasonSkiPass(Season season) {
         // Can only be on weekends
         this.weekType = WeekType.WEEKEND;
         // Only for 1 season
@@ -30,7 +30,8 @@ public class SeasonSkiPass extends SkiPass{
                 ((month >= 6 && month <= 8) && season == Season.SUMMER) ||
                 ((month >= 9 && month <= 11) && season == Season.FALL) ||
                 ((month == 12 || (month >= 1 && month <= 2)) && season == Season.WINTER)) {
-                duration--;
+            } else {
+                duration = 0;
             }
         } else {
             duration = 0;

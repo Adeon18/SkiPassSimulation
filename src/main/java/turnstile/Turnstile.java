@@ -1,6 +1,6 @@
 package turnstile;
 
-import registersystem.RegisterSystem;
+import skipass.RegisterSystem;
 import skipass.SkiPass;
 
 public class Turnstile {

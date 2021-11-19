@@ -14,14 +14,14 @@ public abstract class SkiPass {
     protected WeekType weekType;
     protected boolean activated;
     protected int duration;
-
-    public SkiPass() {
+    // Our constructor is package private only
+    SkiPass() {
         this.id = IdGenerator.generateId();
     }
 
     public abstract void use();
-    // Check if we can still use the card
 
+    // Check if we can still use the card(Basically only checks for weekends and weekdays)
     protected boolean isValidWeekType(Date date){
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
@@ -35,7 +35,7 @@ public abstract class SkiPass {
         }
         return false;
     }
-
+    // This function just returns the fact tat the duration still exists.
     public boolean checkIfUsable() {
         return duration > 0;
     }

@@ -2,10 +2,7 @@ import carddata.Season;
 import carddata.WeekType;
 import carddata.DayType;
 import carddata.LiftType;
-import registersystem.RegisterSystem;
-import skipass.DaysSkiPass;
-import skipass.LiftsSkiPass;
-import skipass.SkiPass;
+import skipass.RegisterSystem;
 import turnstile.Turnstile;
 
 public class Main {

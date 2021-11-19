@@ -9,7 +9,7 @@ import java.util.Date;
 @Getter
 public class LiftsSkiPass extends SkiPass{
 
-    public LiftsSkiPass(WeekType weekType, LiftType duration) {
+    LiftsSkiPass(WeekType weekType, LiftType duration) {
         this.weekType = weekType;
         this.duration = duration.getLength();
         this.activated = true;
